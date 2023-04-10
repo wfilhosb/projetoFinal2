@@ -1,32 +1,32 @@
 package projetoFinal.projetoFinal;
 
 public class Email {
-	private int codigo;
-	private String endereco_email;
-	private String descricao_email;
+	private int codigoEmail;
+	private String enderecoEmail;
+	private String decricaoEmail;
 
-	public int getCodigo() {
-		return codigo;
+	public int getCodigoEmail() {
+		return codigoEmail;
 	}
 
-	public void setCodigo(int codigo) {
-		this.codigo = codigo;
+	public void setCodigoEmail(int codigo) {
+		this.codigoEmail = codigo;
 	}
 
-	public String getEndereco_email() {
-		return endereco_email;
+	public String getEnderecoEmail() {
+		return enderecoEmail;
 	}
 
-	public void setEndereco_email(String endereco_email) {
-		this.endereco_email = endereco_email;
+	public void setEnderecoEmail(String endereco_email) {
+		this.enderecoEmail = endereco_email;
 	}
 
-	public String getDescricao_email() {
-		return descricao_email;
+	public String getDecricaoEmail() {
+		return decricaoEmail;
 	}
 
-	public void setDescricao_email(String descricao_email) {
-		this.descricao_email = descricao_email;
+	public void setDecricaoEmail(String descricao_email) {
+		this.decricaoEmail = descricao_email;
 	}
 
 }
