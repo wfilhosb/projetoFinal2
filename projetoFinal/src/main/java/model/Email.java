@@ -1,9 +1,10 @@
 package model;
 
 public class Email {
-	private int codigoEmail;
-	private String enderecoEmail;
-	private String decricaoEmail;
+	private int codigoEmail; //codigo unico gerado aleatoriamente
+	private String enderecoEmail; //endereco de email fornecido no formulario
+	private String decricaoEmail; //descricao do email informado no formulario
+	private Usuario usuario; // objeto do tipo usuario
 
 	public int getCodigoEmail() {
 		return codigoEmail;
@@ -27,6 +28,14 @@ public class Email {
 
 	public void setDecricaoEmail(String descricao_email) {
 		this.decricaoEmail = descricao_email;
+	}
+
+	public Usuario getUsuario() {
+		return usuario;
+	}
+
+	public void setUsuario(Usuario usuario) {
+		this.usuario = usuario;
 	}
 
 }
