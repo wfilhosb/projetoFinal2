@@ -1,4 +1,4 @@
-package projetoFinal.projetoFinal;
+package model;
 
 public class Email {
 	private int codigoEmail;

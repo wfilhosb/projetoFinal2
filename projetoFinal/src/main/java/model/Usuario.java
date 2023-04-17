@@ -1,4 +1,4 @@
-package projetoFinal.projetoFinal;
+package model;
 
 public class Usuario {
 	private int cod;
