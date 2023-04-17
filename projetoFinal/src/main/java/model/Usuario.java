@@ -3,7 +3,7 @@ package model;
 public class Usuario {
 	private int cod;
 	private String nomeCompleto;
-	private String email;
+	private String endCompleto;
 
 	public int getCod() {
 		return cod;
@@ -21,12 +21,12 @@ public class Usuario {
 		this.nomeCompleto = nomeCompleto;
 	}
 
-	public String getEmail() {
-		return email;
+	public String getEndCompleto() {
+		return endCompleto;
 	}
 
-	public void setEmail(String email) {
-		this.email = email;
+	public void setEndCompleto(String endCompleto) {
+		this.endCompleto = endCompleto;
 	}
 
 }
