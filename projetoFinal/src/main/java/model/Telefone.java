@@ -1,10 +1,22 @@
 package model;
 
+import javax.persistence.*;
+
+@Entity
 public class Telefone {
+	
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int codigoTelefone; //codigo unico gerado aleatoriamente
+	
+	@Column(nullable = false)
 	private String numeroTelefone; //numero que deverá ser informado no formulario
+	
+	@Column(nullable = false)
 	private String observacaoTelefone; //observacao de quem e esse telefone
-	private Usuario usuario; //objeto do tipo usuario
+	
+	@ManyToOne(optional = false, fetch = FetchType.EAGER)
+	private Usuario usuario; //objeto do tipo usuario, tenho que referencialo do outro lado
 
 	public int getCodigoTelefone() {
 		return codigoTelefone;
