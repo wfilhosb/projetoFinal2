@@ -1,5 +1,7 @@
 package model;
 
+import java.util.Objects;
+
 import javax.persistence.*;
 
 @Entity
@@ -50,4 +52,23 @@ public class Telefone {
 		this.usuario = usuario;
 	}
 
+	@Override
+	public int hashCode() {
+		return Objects.hash(codigoTelefone, numeroTelefone, observacaoTelefone, usuario);
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Telefone other = (Telefone) obj;
+		return codigoTelefone == other.codigoTelefone && Objects.equals(numeroTelefone, other.numeroTelefone)
+				&& Objects.equals(observacaoTelefone, other.observacaoTelefone)
+				&& Objects.equals(usuario, other.usuario);
+	}
+	
 }

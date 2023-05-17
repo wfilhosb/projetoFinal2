@@ -2,6 +2,7 @@ package model;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 import javax.persistence.*;
 
@@ -64,4 +65,23 @@ public class Usuario {
 		this.emails = emails;
 	}
 
+	@Override
+	public int hashCode() {
+		return Objects.hash(cod, emails, endCompleto, nomeCompleto, telefones);
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Usuario other = (Usuario) obj;
+		return cod == other.cod && Objects.equals(emails, other.emails)
+				&& Objects.equals(endCompleto, other.endCompleto) && Objects.equals(nomeCompleto, other.nomeCompleto)
+				&& Objects.equals(telefones, other.telefones);
+	}
+	
 }
