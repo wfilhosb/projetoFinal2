@@ -62,6 +62,14 @@ public class UsuarioManagedBean {
 	}
 	
 	public void pesquisar() {
-		
+		listaUsuario = usuarioDao.pesquisarPeloNome(campoPesquisa);
 	}
+	
+	public void excluir() {
+		usuarioDao.excluir(usuario);//estou removendo o usuario no banco e nada mais
+		listaUsuario.remove(usuario);//removendo da lista que foi carregada no início do sistema
+		usuario = new Usuario();//limpando o objeto e criando um novo em memoória
+		FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_INFO,"Informação: ", "Usuário excluído com sucesso!"));
+	}
+	
 }
