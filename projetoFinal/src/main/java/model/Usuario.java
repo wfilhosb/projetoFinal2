@@ -19,11 +19,11 @@ public class Usuario {
 	@Column(nullable = false)
 	private String endCompleto;
 
-	@OneToMany(mappedBy = "usuario", fetch = FetchType.EAGER, cascade = CascadeType.REMOVE, orphanRemoval = true)
-	private List<Telefone> telefones = new ArrayList<Telefone>();
+	@OneToMany(mappedBy = "usuario")
+	private List<Telefone> telefones;
 
-	@OneToMany(mappedBy = "usuario", fetch = FetchType.EAGER, cascade = CascadeType.REMOVE, orphanRemoval = true)
-	private List<Email> emails = new ArrayList<Email>();
+	@OneToMany(mappedBy = "usuario")
+	private List<Email> emails;
 
 	public int getCod() {
 		return cod;
