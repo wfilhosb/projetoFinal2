@@ -18,17 +18,30 @@
 		</p:breadCrumb>
 	</h:form>
 
+	<br />
+
 	<h:form id="formdados">
-		<p:outputLabel>Código:</p:outputLabel>
-		<p:inputText value="#{usuarioManagedBean.usuario.cod}" readonly="true" />
-		<p:outputLabel>Nome Completo:</p:outputLabel>
-		<p:inputText value="#{usuarioManagedBean.usuario.nomeCompleto}"
-			required="true" requiredMessage="Nome obrigatório!" />
-		<p:outputLabel>Endereço:</p:outputLabel>
-		<p:inputText value="#{usuarioManagedBean.usuario.endCompleto}"
-			required="true" requiredMessage="Endereço obrigatório!" />
-		<p:commandButton value="Salvar" action="#{usuarioManagedBean.salvar}" />
+		<p:panel header="Formulário de Usuários">
+			<p:panelGrid columns="2">
+				<p:outputLabel>Código:</p:outputLabel>
+				<p:inputText value="#{usuarioManagedBean.usuario.cod}"
+					readonly="true" />
+				<p:outputLabel>Nome Completo:</p:outputLabel>
+				<p:inputText value="#{usuarioManagedBean.usuario.nomeCompleto}"
+					required="true" requiredMessage="Nome obrigatório!" />
+				<p:outputLabel>Endereço:</p:outputLabel>
+				<p:inputText value="#{usuarioManagedBean.usuario.endCompleto}"
+					required="true" requiredMessage="Endereço obrigatório!" />
+			</p:panelGrid>
+			<br/>
+			<p:messages showDetail="true" showSummary="false" id="msg"/>
+			<p:commandButton value="Salvar" action="#{usuarioManagedBean.salvar}" immediate="true">
+				<f:ajax execute="@this" render="@form"/>
+			</p:commandButton>
+		</p:panel>
 	</h:form>
+
+	<br />
 
 	<h:form id="formconsultar">
 		<p:panel header="Consultar Usuário">
@@ -41,21 +54,23 @@
 		</p:panel>
 	</h:form>
 
+	<br />
+
 	<h:form id="formdatatable">
-		<p:dataTable value="#{usuarioManagedBean.listaUsuario}" var="x" rows="5"
-			paginator="true" lazy="true" paginatorPosition="bottom"
+		<p:dataTable value="#{usuarioManagedBean.listaUsuario}" var="x"
+			rows="5" paginator="true" lazy="true" paginatorPosition="bottom"
 			paginatorTemplate="{FirsPageLink} {PageLinks} {LastPageLink}">
 			<p:column headerText="Código">
-				<h:outputText value="x.cod"/>
+				<h:outputText value="#{x.cod}" />
 			</p:column>
 			<p:column headerText="Nome Completo">
-				<h:outputText value="x.nomeCompleto"/>
+				<h:outputText value="#{x.nomeCompleto}" />
 			</p:column>
 			<p:column headerText="Endereco">
-				<h:outputText value="x.endCompleto"/>
+				<h:outputText value="#{x.endCompleto}" />
 			</p:column>
 			<p:column headerText="Ações">
-				
+
 			</p:column>
 		</p:dataTable>
 	</h:form>
