@@ -12,14 +12,14 @@ import javax.faces.context.FacesContext;
 import dao.UsuarioDao;
 import model.Usuario;
 
-@ViewScoped
 @ManagedBean(name="usuarioManagedBean")
+@ViewScoped
 public class UsuarioManagedBean {
 	
 	//declaração dos objetos e variaveis utilizadas
 	private Usuario usuario = new Usuario(); //dados do usuario que estaremos manipulando
 	private List<Usuario> listaUsuario = new ArrayList<Usuario>(); //lista de todos os usuarios
-	private UsuarioDao usuarioDao = new UsuarioDao<Usuario>(); //objeto usuario que possuia as funcoes criar, alterar, listar e excluir
+	private UsuarioDao<Usuario> usuarioDao = new UsuarioDao<Usuario>(); //objeto usuario que possuia as funcoes criar, alterar, listar e excluir
 	private String campoPesquisa; //variavel que armazena temporariamente o termo que estamos buscando
 	
 	//esse método carregará uma única vez toda lista de usuarios e deixar disponível para usarmos
@@ -40,12 +40,6 @@ public class UsuarioManagedBean {
 	}
 	public void setListaUsuario(List<Usuario> listaUsuario) {
 		this.listaUsuario = listaUsuario;
-	}
-	public UsuarioDao getUsuarioDao() {
-		return usuarioDao;
-	}
-	public void setUsuarioDao(UsuarioDao usuarioDao) {
-		this.usuarioDao = usuarioDao;
 	}
 	public String getCampoPesquisa() {
 		return campoPesquisa;
