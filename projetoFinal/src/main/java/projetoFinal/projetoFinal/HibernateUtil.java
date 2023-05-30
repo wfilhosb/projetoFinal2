@@ -14,15 +14,11 @@ public class HibernateUtil {
 	private static void init() {
 		try {
 			if (factory == null) {
-				factory = Persistence.createEntityManagerFactory("projetoFinal"); //aqui se coloca o nome do projeto
+				factory = Persistence.createEntityManagerFactory("projetoFinal"); // aqui se coloca o nome do projeto
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-	}
-
-	public static EntityManagerFactory getFactory() {
-		return factory;
 	}
 
 	public static EntityManager getEntityManager() {
