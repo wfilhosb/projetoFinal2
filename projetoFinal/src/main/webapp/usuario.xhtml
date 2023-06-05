@@ -35,9 +35,8 @@
 			</p:panelGrid>
 			<br/>
 			<p:messages showDetail="true" showSummary="false" id="msg"/>
-			<p:commandButton value="Salvar" action="#{usuarioManagedBean.salvar}" immediate="true">
-				<f:ajax execute="@this" render="@form"/>
-			</p:commandButton>
+			<p:commandButton value="Salvar" action="#{usuarioManagedBean.salvar}" ajax="false"/>
+			
 		</p:panel>
 	</h:form>
 
