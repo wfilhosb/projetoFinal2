@@ -10,19 +10,11 @@ import projetoFinal.projetoFinal.HibernateUtil;
 public class DaoGenerico<E> {
 	private EntityManager entityManager = HibernateUtil.getEntityManager();
 	
-	public void salvar(E entidade) {
+	public void salvar(E entidade) { //ele tanto SALVA um novo registro quanto ALTERA um registro já existente
 		EntityTransaction transaction = entityManager.getTransaction();
 		transaction.begin();
 		entityManager.persist(entidade);
 		transaction.commit();
-	}
-	
-	public E atualizar(E entidade) {
-		EntityTransaction transaction = entityManager.getTransaction();
-		transaction.begin();
-		E entidadeSalva = entityManager.merge(entidade);
-		transaction.commit();
-		return entidadeSalva;
 	}
 	
 	//esse listar trás tudo que existe cadastrado para essa classe
