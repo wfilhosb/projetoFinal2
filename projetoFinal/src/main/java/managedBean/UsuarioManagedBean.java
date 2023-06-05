@@ -48,7 +48,7 @@ public class UsuarioManagedBean {
 		this.campoPesquisa = campoPesquisa;
 	}
 	
-	public void salvar() {
+	public void salvar() { //tanto salva quanto edita um registro
 		usuarioDao.salvar(usuario);//salva no banco de dados e nada mais
 		listaUsuario.add(usuario);//salva na lista temporária que carrega no início do sistema
 		usuario = new Usuario();// faço a limpeza do objeto deixando ele em branco para qualquer nova ação na tela
