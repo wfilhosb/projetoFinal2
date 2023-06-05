@@ -48,7 +48,7 @@
 				<h:outputLabel value="Digite um nome..." />
 				<p:inputText value="#{usuarioManagedBean.campoPesquisa}" />
 				<p:commandButton actionListener="#{usuarioManagedBean.pesquisar}"
-					value="Buscar Usuário" />
+					value="Buscar Usuário" update="formdatatable"/>
 			</p:panelGrid>
 		</p:panel>
 	</h:form>
@@ -69,7 +69,18 @@
 				<h:outputText value="#{x.endCompleto}" />
 			</p:column>
 			<p:column headerText="Ações">
-
+				
+				<h:commandLink immediate="true" id="botaoeditar">
+					<h:graphicImage url="resources/img/editar.png" width="30" height="30"/>
+					<f:setPropertyActionListener value="#{x}" target="#{usuarioManagedBean.usuario}"/>
+					<f:ajax execute="botaoeditar" render="formdados"/>
+				</h:commandLink>
+				
+				<h:commandLink immediate="true" id="botaoexcluir" action="#{usuarioManagedBean.excluir}">
+					<h:graphicImage url="resources/img/excluir.png" width="30" height="30"/>
+					<f:setPropertyActionListener value="#{x}" target="#{usuarioManagedBean.usuario}"/>
+					<f:ajax execute="botaoexckuir" render="@form :formdados:msg"/>
+				</h:commandLink>
 			</p:column>
 		</p:dataTable>
 	</h:form>
